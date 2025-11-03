@@ -3,8 +3,9 @@
   base = "flight-explorer"
   # use npm ci (faster, deterministic) then run the project's build script
   command = "npm ci && npm run build"
-  # Vite outputs to `dist` by default
-  publish = "flight-explorer/dist"
+  # Vite outputs to `dist` by default. When `base` is set to `flight-explorer`,
+  # the publish directory should be relative to that base directory.
+  publish = "dist"
 
 [dev]
   # optional: how to run a local netlify dev; won't be used by Netlify production builds
