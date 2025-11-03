@@ -1,0 +1,103 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Simple topbar styles (normal CSS, not Tailwind) */
+.topbar {
+  background: #0369a1; /* blue-600 */
+  color: #fff;
+}
+.topbar .topbar-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0;
+}
+.topbar-title { font-weight: 700; font-size: 1.1rem; color: #fff; }
+.topbar-nav { display: flex; gap: 0.5rem; align-items: center; }
+.topbar-link { color: #fff; text-decoration: none; padding: 0.35rem 0.6rem; border-radius: 6px; display: inline-block; }
+.topbar-link:hover { color: #dbeafe; background: rgba(255,255,255,0.03); }
+.topbar-link.active { background: rgba(255,255,255,0.12); color: #fff; }
+
+@media (min-width: 641px) {
+  /* On wider screens ensure nav items are centered under title */
+  .topbar .topbar-inner.stacked { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+}
+
+/* Icon helpers */
+.topbar .icon { vertical-align: middle; margin-right: 6px; height: 16px; width: 16px; }
+.inline-icon { vertical-align: middle; margin-right: 6px; height: 14px; width: 14px; }
+
+/* Animations for cards and modal */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animated-card {
+  animation: fadeInUp 320ms ease both;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.animated-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.08);
+}
+
+.modal-overlay {
+  animation: popIn 180ms ease both;
+}
+.modal {
+  transform-origin: center top;
+  animation: popIn 200ms cubic-bezier(.2,.9,.3,1) both;
+}
+
+/* subtle focus/hover for topbar links */
+.topbar-link:focus {
+  outline: 3px solid rgba(255,255,255,0.18);
+  outline-offset: 2px;
+}
