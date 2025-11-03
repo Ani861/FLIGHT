@@ -1,0 +1,18 @@
+[build]
+  # build from the flight-explorer subfolder
+  base = "flight-explorer"
+  # use npm ci (faster, deterministic) then run the project's build script
+  command = "npm ci && npm run build"
+  # Vite outputs to `dist` by default
+  publish = "flight-explorer/dist"
+
+[dev]
+  # optional: how to run a local netlify dev; won't be used by Netlify production builds
+  command = "npm run dev --prefix flight-explorer"
+
+[[redirects]]
+  # SPA fallback: serve index.html for all routes
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
