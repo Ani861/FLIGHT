@@ -16,4 +16,6 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true
+  # Do NOT force this redirect; leaving `force` out ensures Netlify will
+  # serve existing static files (JS/CSS/assets) from the `dist` folder and
+  # only fall back to index.html for non-file routes handled by the SPA.
